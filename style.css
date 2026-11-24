@@ -5,12 +5,68 @@
 }
 
 body {
-  min-height: 100vh;
+  position: relative;
+  min-height: 165vh;
   display: flex;
   flex-direction: column;
   font-family: system-ui, sans-serif;
-  background: #f4f4f4;
+  background: #ffffff;
   color: #111;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-theme {
+  background: #111111;
+  color: #ffffff;
+}
+
+.theme-switch {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 52px;
+  height: 28px;
+  cursor: pointer;
+}
+
+.theme-switch input {
+  position: absolute;
+  opacity: 0;
+}
+
+.theme-switch-track {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  background: #cccccc;
+  transition: background-color 0.3s ease;
+}
+
+.theme-switch-track::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease;
+}
+
+.theme-switch input:checked + .theme-switch-track {
+  background: #5a67d8;
+}
+
+.theme-switch input:checked + .theme-switch-track::after {
+  transform: translateX(24px);
+}
+
+.theme-switch input:focus-visible + .theme-switch-track {
+  outline: 3px solid #8aa4ff;
+  outline-offset: 3px;
 }
 
 h1 {
@@ -32,4 +88,56 @@ img {
   max-width: 80vw;
   max-height: 70vh;
   object-fit: contain;
+  transform-origin: center;
+  will-change: transform, opacity;
+  cursor: pointer;
+}
+
+.bottom-layer {
+  position: absolute;
+  left: 50%;
+  bottom: 1.5rem;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  transform: translateX(-50%);
+}
+
+.bottom-layer img {
+  max-width: 60vw;
+  max-height: 50vh;
+  transform-origin: center;
+}
+
+#dcjs-image {
+  position: relative;
+  top: -1000px;
+}
+
+#reward-gif {
+  position: relative;
+  top: -100px;
+}
+
+.yes-text {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.back-button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.75rem 1.5rem;
+  background: #ffd400;
+  color: #111111;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.back-button:hover {
+  background: #ffe45c;
 }
