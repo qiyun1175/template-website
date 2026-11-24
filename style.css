@@ -10,7 +10,11 @@ body {
   display: flex;
   flex-direction: column;
   font-family: system-ui, sans-serif;
+<<<<<<< HEAD
   background: #ffffff;
+=======
+  background: #000000;
+>>>>>>> 0bb4d19638b3c7e5477f65d3c4c4d181873203b0
   color: #111;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -73,6 +77,14 @@ h1 {
   text-align: center;
   padding: 2rem 1rem;
   font-size: 3rem;
+  color: #ffdd00;
+}
+
+h2 {
+  text-align:center;
+  padding: 2rem 2rem;
+  font-size: 1.5rem;
+  color: #ffdd00;
 }
 
 main {
@@ -85,8 +97,8 @@ main {
 
 img {
   display: block;
-  max-width: 80vw;
-  max-height: 70vh;
+  max-width: 60vw;
+  max-height: 40vh;
   object-fit: contain;
   transform-origin: center;
   will-change: transform, opacity;
